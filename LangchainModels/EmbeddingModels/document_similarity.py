@@ -11,7 +11,7 @@ model = ChatGoogleGenerativeAI(model="gemini-3-flash-preview", temperature=0.1)
 with open("LangchainModels/data/documents_similarity.json", "r") as f:
     documents = json.loads(f.read())["documents"]
 
-query = "How do solar panels work?"
+query = "What are some advantages of planting trees?"
 
 # Embed the query
 query_embedding = embeddings_model.embed_query(
@@ -35,6 +35,10 @@ top_k_indices = scores.argsort()[-top_k:][::-1]
 # best results
 filtered_docs = [documents[i] for i in top_k_indices]
 
+print("Top 3 most similar documents:")
+for i, doc in enumerate(filtered_docs):
+    print(f"{i+1}. {doc}")
+
 prompt = f"""
 You are a helpful assistant. Answer the question based on the following documents:
 
@@ -48,5 +52,6 @@ DO NOT use any information outside of the above documents to answer the question
 If you don't know the answer, say you don't know.
 """
 
+print("Query:", query)
 response = model.invoke(prompt)
-print(response.text)
+print("Response:", response.text)
