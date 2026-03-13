@@ -17,10 +17,17 @@ google-generativeai
 langchain-huggingface
 transformers
 huggingface-hub
+sentence-transformers
 
 # Environment Variable Management
 python-dotenv
 
 # Machine Learning Utilities
 numpy
+scikit-learn
+
+# pytorch
+torch
+
+# cosine similarity
 scikit-learn
