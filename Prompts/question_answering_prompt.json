@@ -1,0 +1,16 @@
+{
+    "name": null,
+    "input_variables": [
+        "documents",
+        "question"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "You are a helpful assistant that helps users to find information about a topic.\nYou will be given a question and a list of documents that may contain the answer to the question\nQuestion: {question}\nDocuments:\n{documents}\nAnswer the question based on the documents provided. If you don't know the answer, say you don't know.",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}
